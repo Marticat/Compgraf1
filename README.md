@@ -1,8 +1,8 @@
 ## Compgraf1
 
-#Assignment 1 – OpenGL Basics
-#Task 1. 
-##Program Descriptions
+# Assignment 1 – OpenGL Basics
+# Task 1. 
+## Program Descriptions
 red_triangle.cpp
 This program creates an OpenGL window (800x600) and displays a single red triangle in the center of the screen. 
 
@@ -41,7 +41,7 @@ Update draw call to use 6 vertices instead of 3
 glDrawArrays(GL_TRIANGLES, 0, 6);
 
 
-##Task 2. Drawing 2D Polygons with Color
+## Task 2. Drawing 2D Polygons with Color
 This program creates a 500×500 window and draws the following objects:
 
 Triangle – with per-vertex colors (interpolated red, green, blue).
@@ -50,7 +50,7 @@ Circle with gradient shading – centered at (0.6, 0.6), red intensity varies sm
 Stacked Squares – multiple squares drawn on top of each other using GL_TRIANGLE_STRIP. Colors alternate from black to white, giving a layered effect.
 All shapes are drawn using modern OpenGL (Core Profile, no deprecated functions).
 
-#Attributes:
+# Attributes:
 
 vPosition – vertex position (x, y)
 vColor – vertex color (r, g, b)
@@ -75,13 +75,13 @@ GLFW
 GLAD
 Make utility
 
-#Compilation
+# Compilation
 
 Unzip the project.
 Enter the directory 
 
 
-##Usage
+## Usage
 
 Tested Environment
 OS: Win11
