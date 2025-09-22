@@ -1,4 +1,4 @@
-##Compgraf1
+## Compgraf1
 
 #Assignment 1 – OpenGL Basics
 #Task 1. 
