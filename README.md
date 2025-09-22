@@ -1,14 +1,32 @@
 ## Compgraf1
 
 # Assignment 1 – OpenGL Basics
-# Task 1. 
+
+
+## Task 1 – Getting Started
+
+Compile a first OpenGL program.
+Draw a red triangle.
+Modify it to show a blue square (fitting the whole window).
+
+## Task 2 – Drawing 2D Polygons with Color
+
+Use modern OpenGL to draw shapes (triangle, ellipse, circle, stacked squares).
+Pass attributes (vPosition, vColor) to shaders.
+Use triangle-based primitives (GL_TRIANGLES, GL_TRIANGLE_FAN, GL_TRIANGLE_STRIP).
+No deprecated OpenGL functions were used.
+
 ## Program Descriptions
 red_triangle.cpp
-This program creates an OpenGL window (800x600) and displays a single red triangle in the center of the screen. 
 
-blue_square.cpp (modified from red_triangle.cpp)
-This program creates an OpenGL window (800x600) and displays a single blue square that fits inside the window.
-Changes made to red_triangle.cpp:
+Opens an OpenGL window 800×600.
+Draws a red triangle in the center.
+Uses shaders (vertexShaderSource, fragmentShaderSource) and buffer objects.
+
+blue_square.cpp
+Based on red_triangle.cpp, but modified.
+
+Changes made:
 
 1:Modified fragment shader to use blue instead of red.
 
@@ -42,21 +60,20 @@ glDrawArrays(GL_TRIANGLES, 0, 6);
 
 
 ## Task 2. Drawing 2D Polygons with Color
-This program creates a 500×500 window and draws the following objects:
 
-Triangle – with per-vertex colors (interpolated red, green, blue).
-Ellipse – centered at (-0.6, 0.6), drawn with GL_TRIANGLE_FAN, scaled y-radius to 60%.
-Circle with gradient shading – centered at (0.6, 0.6), red intensity varies smoothly as a function of angle.
-Stacked Squares – multiple squares drawn on top of each other using GL_TRIANGLE_STRIP. Colors alternate from black to white, giving a layered effect.
-All shapes are drawn using modern OpenGL (Core Profile, no deprecated functions).
+Opens a 500×500 window.
+Draws several 2D shapes:
+Triangle – each vertex has its own color (red, green, blue), colors interpolate.
+Ellipse – centered at (-0.6, 0.6), created with GL_TRIANGLE_FAN, Y-axis scaled 60%.
+Circle with gradient – centered at (0.6, 0.6), red intensity changes with angle.
+Stacked squares – drawn with GL_TRIANGLE_STRIP, colors alternate between black/white.
 
-# Attributes:
+## Attributes:
 
 vPosition – vertex position (x, y)
 vColor – vertex color (r, g, b)
 
-
-Task2part2.cpp
+## Task2part2.cpp
 
 A creative extension of Part 1, adding more variation: 
 Triangle constructed using angle-based coordinates (2π/3 increments) Ellipse with center (-0.6, 0.6), red shading, Y scaled 60% 
@@ -65,39 +82,52 @@ Colors form a grayscale gradient from black to white This part demonstrates:
 Use of parametric equations (cos, sin) for shape generation Color variation as functions of angle 
 Procedural construction of vertices instead of hardcoding
 
-Build Instructions
 
+
+## Build Instructions
 Requirements
 
-C++ compiler with C++11 (or newer)
-OpenGL 3.3+
+C++11 (or newer)
+OpenGL 3.3 Core Profile
 GLFW
 GLAD
-Make utility
 
-# Compilation
+Steps
 
 Unzip the project.
-Enter the directory 
-In VS please make sure that your chosen file is not Excluded From Build
-Go to properties -> write "No" on Excluded From Build field
-Be sure that only 1 file is not excluded (other files must be excluded(write "yes" on the field))
-Run the project
+Go into the folder.
+Run one of the programs (for example):
 
-P.S if there are any problems with libraries
-download glad and write commands in cmd
+./red_triangle
+./blue_square
+./task2
+./task2part2
+
+
+### VS Code / Visual Studio note:
+If you are using Visual Studio, make sure that only one .cpp file is marked as "included in build". Go to:
+Properties → Excluded From Build → set "No" for the file you want, and "Yes" for the rest.
+
+## Library Setup (if needed)
+
+If you don’t already have GLFW/GLAD, you can use vcpkg:
 
 git clone https://github.com/microsoft/vcpkg.git
 cd vcpkg
 bootstrap-vcpkg.bat
 vcpkg integrate install
 vcpkg install glfw3 glew glm
-vcpkg install glew
-## Usage
 
-### Tested Environment
-OS: Win11
+## Usage
+Tested Environment
+OS: Windows 11
 Compiler: g++ 11.4.0
 OpenGL: 3.3 Core Profile
 GLFW: 3.3.8
-GLAD: generated for OpenGL 3.3 Core
+GLAD: generated for OpenGL 3.3
+
+
+Pictures with results are in pdf file
+How to use parametric equations (cos, sin) to create circles and ellipses.
+
+How small shader/vertex changes (like switching red → blue) completely change the result.
