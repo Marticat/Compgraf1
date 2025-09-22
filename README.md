@@ -79,11 +79,23 @@ Make utility
 
 Unzip the project.
 Enter the directory 
+In VS please make sure that your chosen file is not Excluded From Build
+Go to properties -> write "No" on Excluded From Build field
+Be sure that only 1 file is not excluded (other files must be excluded(write "yes" on the field))
+Run the project
 
+P.S if there are any problems with libraries
+download glad and write commands in cmd
 
+git clone https://github.com/microsoft/vcpkg.git
+cd vcpkg
+bootstrap-vcpkg.bat
+vcpkg integrate install
+vcpkg install glfw3 glew glm
+vcpkg install glew
 ## Usage
 
-Tested Environment
+### Tested Environment
 OS: Win11
 Compiler: g++ 11.4.0
 OpenGL: 3.3 Core Profile
